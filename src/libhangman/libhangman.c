@@ -27,6 +27,7 @@ void fileRead(char** dictionary, int mode)
     while (!feof(file)) {
         sym = fgetc(file);
         if (sym == ' ') {
+            buf[k] = '\0';
             dictionary[i] = buf;
             i++;
             k = 0;
@@ -38,17 +39,15 @@ void fileRead(char** dictionary, int mode)
         }
     }
 }
-void randWord(char** dictionary, char* word)
+void randWord(char** dictionary, char** word)
 {
     int randW = rand() % SIZE;
-    word = dictionary[randW];
+    *word = dictionary[randW];
 }
 int searchLetter(char* word, char letter)
 {
 }
 void helper()
 {
-    // printf("-c - режим Страны\n
-    //  -a - режим Животные\n
-    //  -p - режим Растения\n");
+    printf("-c - режим Страны\n-a - режим Животные\n-p - режим Растения\n");
 }
