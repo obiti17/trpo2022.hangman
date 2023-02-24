@@ -7,9 +7,9 @@
 
 #define SIZE 8
 
-void print();
+void print(char *tmp_word, int num_hang, char *word);
 void fileRead(char** dictionary, int mode);
 void randWord(char** dictionary, char** word);
-int searchLetter(char* word, char letter); // если буква найдена - возвращает
+int searchLetter(char* word, char* tmp_word, char letter); // если буква найдена - возвращает
                                            // позицию, если не найдена - (-1)
 void helper();

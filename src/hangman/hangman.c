@@ -26,7 +26,33 @@ int main(int argc, char** argv)
 
     srand(time(NULL));
     randWord(dictionary, &word);
+
+    printf("\E[H\E[J");   //printf ("\E[%d;%dH", y, x);
+
+    char letter, *tmp_word = malloc(30);
+    for (size_t i = 0; i < strlen(word); i++) {
+        tmp_word[i] = '*';
+    }
+    tmp_word[strlen(word)] = '\0';
+
+    int num_hang = 0;
     printf("%s\n", word);
+    while (strcmp(word, tmp_word)) {
+        printf ("\E[%d;%dH", 10, 0);
+        printf("Enter letter : ");
+        letter = getchar();
+        if (letter == '\n') continue;
+        printf("\E[H\E[J");
+        if (searchLetter(word, tmp_word, letter) == -1) {
+            num_hang++;
+        }
+        print(tmp_word, num_hang, word);
+    }
+
+    print(tmp_word, num_hang, word);
+    printf ("\E[%d;%dHВЫИГРАЛИ!\n", 100, 0);
+
+
 
     return 0;
 }

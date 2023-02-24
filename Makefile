@@ -1,11 +1,11 @@
 TARGET1 = ./bin/hangman
 TARGET2 = ./obj/src/libhangman/libhangman.a
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Wextra -O0 -g
 .PHONY : clean
 
 $(TARGET1) : ./obj/src/hangman/hangman.o $(TARGET2)
-	$(CC) $(CFLAGS) -o $@ ./obj/src/hangman/hangman.o -L./obj/src/libhangman -libhangman
+	$(CC) $(CFLAGS) -o $@ ./obj/src/hangman/hangman.o -L./obj/src/libhangman -lhangman
 
 $(TARGET2) : ./obj/src/libhangman/libhangman.o
 	ar rcs $@ $^
@@ -17,7 +17,7 @@ $(TARGET2) : ./obj/src/libhangman/libhangman.o
 	$(CC) -c $(CFLAGS) -o $@ $^
 
 run :
-	./TARGET1
+	./$(TARGET1)
 
 clean :
 	rm ./obj/src/libhangman/libhangman.a ./obj/src/libhangman/libhangman.o ./obj/src/hangman/hangman.o ./bin/hangman
