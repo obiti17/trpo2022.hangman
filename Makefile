@@ -32,4 +32,4 @@ run_test :
 	./$(TARGET3)
 
 clean :
-	rm ./obj/src/libhangman/libhangman.a ./obj/src/libhangman/libhangman.o ./obj/src/hangman/hangman.o ./bin/hangman ./obj/test/main.o ./obj/test/test.o
+	rm ./obj/src/libhangman/libhangman.a ./obj/src/libhangman/libhangman.o ./obj/src/hangman/hangman.o ./bin/hangman ./obj/test/main.o ./obj/test/test.o ./bin/test
