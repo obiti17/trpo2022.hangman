@@ -1,41 +1,41 @@
 #include <libhangman.h>
 
-void print(char *tmp_word, int num_hang, char *word)
+void print(char* tmp_word, int num_hang, char* word)
 {
-    printf ("\E[%d;%dH", 4, 20);
+    printf("\E[%d;%dH", 4, 20);
     printf("letter : %s\n", tmp_word);
     if (num_hang == 0) {
-        printf ("\E[%d;%dH_", 3, 1);
+        printf("\E[%d;%dH_", 3, 1);
     }
     if (num_hang >= 1) {
-        printf ("\E[%d;%dH_", 3, 2);
+        printf("\E[%d;%dH_", 3, 2);
     }
     if (num_hang >= 2) {
-        printf ("\E[%d;%dH_", 3, 3);
+        printf("\E[%d;%dH_", 3, 3);
     }
     if (num_hang >= 3) {
-        printf ("\E[%d;%dH|", 4, 3);
+        printf("\E[%d;%dH|", 4, 3);
     }
     if (num_hang >= 4) {
-        printf ("\E[%d;%dH*", 5, 3);
+        printf("\E[%d;%dH*", 5, 3);
     }
     if (num_hang >= 5) {
-        printf ("\E[%d;%dH|", 6, 3);
+        printf("\E[%d;%dH|", 6, 3);
     }
     if (num_hang >= 6) {
-        printf ("\E[%d;%dH/", 6, 2);
+        printf("\E[%d;%dH/", 6, 2);
     }
     if (num_hang >= 7) {
-        printf ("\E[%d;%dH\\", 6, 4);
+        printf("\E[%d;%dH\\", 6, 4);
     }
     if (num_hang >= 8) {
-        printf ("\E[%d;%dH/", 7, 2);
+        printf("\E[%d;%dH/", 7, 2);
     }
     if (num_hang >= 9) {
-        printf ("\E[%d;%dH\\", 7, 4);
+        printf("\E[%d;%dH\\", 7, 4);
     }
     if (num_hang >= 10) {
-        printf ("\E[%d;%dH", 4, 20);
+        printf("\E[%d;%dH", 4, 20);
         printf("letter : %s\n", word);
         printf("\E[100;0HПРОИГРЫШ!\n");
         exit(0);

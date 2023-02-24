@@ -36,12 +36,13 @@ int main(int argc, char** argv)
     tmp_word[strlen(word)] = '\0';
 
     int num_hang = 0;
-    //printf("%s\n", word);
+    // printf("%s\n", word);
     while (strcmp(word, tmp_word)) {
-        printf ("\E[%d;%dH", 10, 0);
+        printf("\E[%d;%dH", 10, 0);
         printf("Enter letter : ");
         letter = getchar();
-        if (letter == '\n') continue;
+        if (letter == '\n')
+            continue;
         printf("\E[H\E[J");
         if (searchLetter(word, tmp_word, letter) == -1) {
             num_hang++;
@@ -50,9 +51,7 @@ int main(int argc, char** argv)
     }
 
     print(tmp_word, num_hang, word);
-    printf ("\E[%d;%dHВЫИГРАЛИ!\n", 100, 0);
-
-
+    printf("\E[%d;%dHВЫИГРАЛИ!\n", 100, 0);
 
     return 0;
 }
