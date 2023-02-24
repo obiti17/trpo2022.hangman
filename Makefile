@@ -2,7 +2,7 @@ TARGET1 = ./bin/hangman
 TARGET2 = ./obj/src/libhangman/libhangman.a
 TARGET3 = ./bin/test
 CC = gcc
-CFLAGS = -Wall -Wextra -O0 -g -I ctest -I src/libhangman/
+CFLAGS = -Wall -Werror -Wextra -O0 -g -I ctest -I src/libhangman/
 .PHONY : clean
 
 $(TARGET1) : ./obj/src/hangman/hangman.o $(TARGET2) $(TARGET3)
