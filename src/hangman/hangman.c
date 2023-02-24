@@ -1,4 +1,4 @@
-#include "../libhangman/libhangman.h"
+#include <libhangman.h>
 
 int main(int argc, char** argv)
 {
@@ -27,7 +27,7 @@ int main(int argc, char** argv)
     srand(time(NULL));
     randWord(dictionary, &word);
 
-    printf("\E[H\E[J");   //printf ("\E[%d;%dH", y, x);
+    printf("\E[H\E[J");
 
     char letter, *tmp_word = malloc(30);
     for (size_t i = 0; i < strlen(word); i++) {
@@ -36,7 +36,7 @@ int main(int argc, char** argv)
     tmp_word[strlen(word)] = '\0';
 
     int num_hang = 0;
-    printf("%s\n", word);
+    //printf("%s\n", word);
     while (strcmp(word, tmp_word)) {
         printf ("\E[%d;%dH", 10, 0);
         printf("Enter letter : ");

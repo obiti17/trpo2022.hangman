@@ -1,10 +1,10 @@
-#include "libhangman.h"
+#include <libhangman.h>
 
 void print(char *tmp_word, int num_hang, char *word)
 {
     printf ("\E[%d;%dH", 4, 20);
     printf("letter : %s\n", tmp_word);
-    if (num_hang > 0) {
+    if (num_hang == 0) {
         printf ("\E[%d;%dH_", 3, 1);
     }
     if (num_hang >= 1) {
