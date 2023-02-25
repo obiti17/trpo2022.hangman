@@ -37,6 +37,7 @@ int main(int argc, char** argv)
 
     int num_hang = 0;
     // printf("%s\n", word);
+    printf("\E[%d;%dHword : %s\n", 4, 20, tmp_word);
     while (strcmp(word, tmp_word)) {
         printf("\E[%d;%dH", 10, 0);
         printf("Enter letter : ");
